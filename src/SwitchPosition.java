@@ -2,9 +2,17 @@ import java.util.Scanner;
 
 public class SwitchPosition {
 
-    public static int[] getUserInput(int length) {
-        Scanner scanner = new Scanner(System.in);
+    public static int howManyElements(Scanner scanner) {
+        int numOfElements;
+        
+        System.out.print("How many elements do you wish to insert? ");
+        numOfElements = scanner.nextInt();
+        System.out.print("\n");
+        
+        return numOfElements;
+    }
 
+    public static int[] getUserInput(int length, Scanner scanner) {
         int[] array = new int[length];
 
         for (int i = 0; i < length; i++) {
@@ -13,8 +21,6 @@ public class SwitchPosition {
             int num = scanner.nextInt();
             array[i] = num;
         }
-
-        scanner.close();
 
         return array;
     }
@@ -39,11 +45,13 @@ public class SwitchPosition {
     }
 
     public static void main(String[] args) throws Exception {
-        int length = 6;
-
+        int length;
         int[] userArray;
+        
+        Scanner scanner = new Scanner(System.in);
 
-        userArray = getUserInput(length);
+        length = howManyElements(scanner);
+        userArray = getUserInput(length, scanner);
 
         System.out.print("\nHere is the array you've typed: {");
         printArray(userArray);
@@ -54,5 +62,7 @@ public class SwitchPosition {
         System.out.print("\nHere is the array with the positions switched: {");
         printArray(userArray);
         System.out.println(" }");
+
+        scanner.close();
     }
 }
