@@ -2,9 +2,6 @@ import java.util.Scanner;
 
 public class Data {
     
-    /**
-     * Declaração de classe para input do usuário;
-     */
     static Scanner dadoDoTeclado;
 
     /**
