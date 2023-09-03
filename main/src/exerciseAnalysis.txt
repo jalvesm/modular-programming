@@ -41,14 +41,61 @@ DADOS
 
 Ex3)
 
-PARTIDA
+classe PARTIDA
+
+static quartoVigente;
+static int[] pontuacaoEquipeA;
+static int[] pontuacaoEquipeB;
 
 AÇÕES
--> Marcar (adicionar) pontuação para a equipe
--> Somar pontuação final
--> Verificar se deu empate
--> Imprimir placar
--> Definir equipe vencedora
+-> Marcar (adicionar) pontuação(int pontuação)
+        pontuacaoEquipeA[quartoVigente] = pontuação;
+        quartoVigente++
+
+-> Somar pontuação final(int[] array)
+        for (int i = 0; i <= len.array; i++)
+                soma
+                return somaDoVetor
+
+-> Somar pontuação()
+        Para cada posição do vetor
+                soma o valor e armazena na soma
+        retorna soma
+
+-> define equipe vencedora()
+        somaA = Somar pontuação(pontuacaoEquipeA)
+        somaB = Somar pontuação(pontuacaoEquipeB)
+
+        Se (somaA > somaB)
+                return imprime "Equipe vencedora: A"
+        senãose
+                return imprime "Equipe vencedora: B"
+        senão 
+                imprime "deu empate! Redirecionando para prorrogação";
+                Marcar (adicionar) pontuação()
+
+-> Imprime vetor()
+        Para (cada posição do vetor)
+                imprime posição
+
+-> Imprimir placar()
+        imprime vetor (Periodos)
+        imprime vetor (Equipe A)
+        imprime vetor (Equipe B)
+
+-> Main()
+        input: Adicionar pontuação:
+                Equipe A = Marcar pontuação equipe A
+                Equipe B = Marcar pontuação equipe A
+        quartoVigente++;
+
+        define equipe vencedora()
+        Imprimir placar()
+
+        FIM
+
+
+
 
 SUBSTANTIVOS
 -> Soma da Pontuação da Equipe A: 
@@ -57,3 +104,7 @@ SUBSTANTIVOS
 -> pontuação Equipe A
 -> pontuação Equipe B
 -> equipe vencedora 
+
+Qual é o quarto?
+-> quartoVigente (1, 2, 3, 4, 5, ...)
+
