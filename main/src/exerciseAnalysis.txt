@@ -1,0 +1,59 @@
+Ex2) CONTA DE FATURAMENTO (FATURA)
+-> emitir conta de faturamento 
+
+Conta de faturamento possui:
+-> identificador da unidade faturada (dado)
+-> leitura do relógio atual (dado)
+-> leitura do relógio do mês anterior (dado)
+
+-> Calcular consumo da unidade: 
+        consumoEmKWh = (leitura do relógio atual - leitura do relógio do mês anterior);  
+-> calcular valor total da fatura (preço a pagar pelo titular da conta):
+                valor do consumo = total consumo em KWh * 0,79
+                taxa de iluminação publica = R$12,75 
+                valor parcial = taxa de iluminação + valor do consumo
+                imposto = 0,18 * valor parcial
+
+- MÉTODOS
++ getIdCliente()
++ getIdentificadorUnidade()
++ getLeituraRelogioMesAnterior(Int idUnidade, Int idCliente)
++ getLeituraRelogioMesVigente(Int idUnidade, Int idCliente)
++ calculaConsumoDeEnergia(Double leituraRelogioMesVigente, Double leituraRelogioMesAnterior): Double
++ calculaConsumoEmReais(Double totalConsumoEmKwh): Double
++ calculaValorParcialDaFatura(Double valorConsumoEmReais): Double
++ calculaImposto(Double valorParcialDaFatura): Double
++ calculaFatura(): Double
+
+DADOS
+- VALORKWH: Double                    // 0.79
+- TAXAILUMINACAOPUBLICA: Double       // 12.75
+- TAXAIMPOSTO: Double                 // 0.18
+- idUnidade: Int
+- idCliente: Int
+- leituraRelogioMesVigente: Double
+- leituraRelogioMesAnterior: Double 
+- totalConsumoEmKwh: Double
+- valorConsumoEmReais: Double 
+- valorParcialDaFatura: Double
+- valorTotalFatura: Double
+
+
+Ex3)
+
+PARTIDA
+
+AÇÕES
+-> Marcar (adicionar) pontuação para a equipe
+-> Somar pontuação final
+-> Verificar se deu empate
+-> Imprimir placar
+-> Definir equipe vencedora
+
+SUBSTANTIVOS
+-> Soma da Pontuação da Equipe A: 
+-> Soma da Pontuação da Equipe B
+-> Periodos = [ , Q1, Q2, Q3, Q4, PR, ...]
+-> pontuação Equipe A
+-> pontuação Equipe B
+-> equipe vencedora 
