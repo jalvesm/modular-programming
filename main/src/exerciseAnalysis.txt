@@ -43,14 +43,21 @@ Ex3)
 
 classe PARTIDA
 
-static quartoVigente;
+static quartoVigente
 static int[] pontuacaoEquipeA;
 static int[] pontuacaoEquipeB;
 
-AÇÕES
--> Marcar (adicionar) pontuação(int pontuação)
-        pontuacaoEquipeA[quartoVigente] = pontuação;
-        quartoVigente++
+// AÇÕES
+
+-> RecolherInputUsuário()
+        retorna dadoInputado
+
+-> Marcar pontuação()
+        Para cada contadorQuarto++ em 5
+                mensagem: "Pontuação Equipe $equipe"
+                pontuacaoEquipe[i] = RecolherInputUsuário();
+                contadorQuarto++
+        retorna pontuaçaoEquipe[]
 
 -> Somar pontuação final(int[] array)
         for (int i = 0; i <= len.array; i++)
@@ -58,21 +65,32 @@ AÇÕES
                 return somaDoVetor
 
 -> Somar pontuação()
-        Para cada posição do vetor
+        Para cada posição do vetor da equipe
                 soma o valor e armazena na soma
         retorna soma
 
--> define equipe vencedora()
-        somaA = Somar pontuação(pontuacaoEquipeA)
-        somaB = Somar pontuação(pontuacaoEquipeB)
+-> Define equipe vencedora()
+        int somaA = Somar pontuação(EquipeA)
+        int somaB = Somar pontuação(EquipeB)
 
         Se (somaA > somaB)
-                return imprime "Equipe vencedora: A"
+                imprime "Equipe vencedora: A"
+                Imprimir placar()
         senãose
-                return imprime "Equipe vencedora: B"
+                imprime "Equipe vencedora: B"
+                Imprimir placar()
         senão 
-                imprime "deu empate! Redirecionando para prorrogação";
-                Marcar (adicionar) pontuação()
+                imprime Redirecionando prorrogação:
+                Marcar pontuação Prorrogação(somaA, somaB)
+        FIM
+
+-> Marcar pontuação Prorrogação(somaA, somaB)
+        int numProrrogação = 5
+        Enquanto somaA for igual a somaB        
+                Marcar pontuação(numProrrogação)
+                numProrrogação++
+                Define equipe vencedora()
+        FIM
 
 -> Imprime vetor()
         Para (cada posição do vetor)
@@ -85,26 +103,20 @@ AÇÕES
 
 -> Main()
         input: Adicionar pontuação:
-                Equipe A = Marcar pontuação equipe A
-                Equipe B = Marcar pontuação equipe A
-        quartoVigente++;
+        EquipeA = Marcar pontuação()
+        EquipeB = Marcar pontuação()
 
-        define equipe vencedora()
-        Imprimir placar()
-
+        Define equipe vencedora()
+        
         FIM
 
-
-
-
 SUBSTANTIVOS
+DADOS
 -> Soma da Pontuação da Equipe A: 
 -> Soma da Pontuação da Equipe B
 -> Periodos = [ , Q1, Q2, Q3, Q4, PR, ...]
 -> pontuação Equipe A
 -> pontuação Equipe B
--> equipe vencedora 
+-> equipe vencedora
 
-Qual é o quarto?
--> quartoVigente (1, 2, 3, 4, 5, ...)
-
+Problemas: como armazenar na última posição do vetorA a soma de todas as posições do vetorA? 
