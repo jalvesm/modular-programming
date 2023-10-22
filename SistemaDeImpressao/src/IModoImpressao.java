@@ -1,4 +1,4 @@
-public interface ModoImpressao {
+public interface IModoImpressao {
     
     String getNome();
     double calcularPreco(int quantidadePaginas);

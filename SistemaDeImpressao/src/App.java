@@ -1,7 +1,5 @@
 public class App {
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws Exception {
         Pagina paginasDoc1 = new Pagina(10);
         Pagina paginasDoc2 = new Pagina(5);
 
@@ -16,11 +14,11 @@ public class App {
         doc1.adicionaPagina(paginasDoc2);
         doc2.adicionaPagina(paginasDoc2);
         
-        ModoImpressao modo = new ModoColorido();
+        IModoImpressao modo = new ModoColorido();
 
         Impressao impr = new Impressao(modo);
-        System.out.println("Valor da impressão: R$" + impr.imprimir(doc1) + " do documento de nome '" + doc1.getNome()+"'.");
 
-        System.out.println("Valor da impressão: R$" + impr.imprimir(doc2) + " do documento de nome '" + doc2.getNome()+"'.");
+        System.out.println("Valor da impressão: R$" + impr.imprimir(doc1) + " do documento de nome '" + doc1.getNome()+"'.");
+        Tanque.imprimirEstimativaDeTintaRestante();
     }
 }

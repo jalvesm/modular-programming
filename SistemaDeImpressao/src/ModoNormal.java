@@ -1,4 +1,4 @@
-public class ModoNormal implements ModoImpressao {
+public class ModoNormal implements IModoImpressao {
     private static final double CUSTO_NORMAL = 0.10;
 
     @Override

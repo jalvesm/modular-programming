@@ -1,21 +1,23 @@
 public enum Tanque {
-    CIANO("Colorido", 100),
-    MAGENTA("Colorido", 100),
-    AMARELO("Colorido", 100),
-    PRETO("Normal", 100);
+    CIANO(21),
+    MAGENTA(21),
+    AMARELO(12),
+    PRETO(12);
 
-    private final String descricao;
-    private double tintaRestante;
+    double tintaRestante;
 
-    Tanque(String descricao, double tintaRestante) {
-        this.descricao = descricao;
+    Tanque(double tintaRestante) {
+        this.tintaRestante = tintaRestante;
     }
 
     public double getTintaRestante() {
         return tintaRestante;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public static void imprimirEstimativaDeTintaRestante() {
+        System.out.println("Estimativa do volume de tinta: ");
+        for (Tanque tanque : values()) {
+            System.out.println(tanque + ": " + tanque.getTintaRestante());
+        }
     }
-}
+}   
