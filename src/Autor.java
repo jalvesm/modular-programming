@@ -1,7 +1,7 @@
 public class Autor {
-    String nome;
-    String cpf;
-    String email;       
+    private String nome;
+    private String cpf;
+    private String email;
 
     public String getNome() {
         return nome;

@@ -3,7 +3,14 @@ public class Livro {
     private String descricao;
     private double valor;
     private String isbn;
-    Autor autor;
+    private Autor autor;
+    private boolean impresso;
+
+    public Livro(Autor autor){
+        this.autor = autor;
+        this.isbn = "000-00-00000-00-0";
+        this.impresso = true;
+    }
 
     public String getNome() {
         return nome;
@@ -35,14 +42,6 @@ public class Livro {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
     }
 
     void mostrarDetalhes() {
